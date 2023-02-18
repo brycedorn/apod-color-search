@@ -1,0 +1,39 @@
+name: Process images for month
+on: 
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Year'     
+        required: true
+      month:
+        description: 'Month'     
+        required: true
+env:
+  SUPABASE_REST_URL: ${{ secrets.SUPABASE_REST_URL }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_PUBLIC_API_KEY: ${{ secrets.SUPABASE_PUBLIC_API_KEY }}
+  APOD_API_URL: ${{ secrets.APOD_API_URL }}
+  APOD_API_KEY: ${{ secrets.APOD_API_KEY }}
+jobs:
+  process-images-for-month:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install Rust 🦀
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+          toolchain: stable
+
+      - name: Lint 🧹
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy -- -D warnings
+
+      - name: Test 🔨
+        run: cargo test
+
+      - name: Run 🤖
+        run: cargo run -- ${{ github.event.inputs.year }} ${{ github.event.inputs.month }}

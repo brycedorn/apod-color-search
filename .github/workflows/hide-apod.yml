@@ -1,0 +1,35 @@
+name: Hide days from results
+on: 
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Dates (comma-separated YYYY-MM-DD)'     
+        required: true
+env:
+  SUPABASE_REST_URL: ${{ secrets.SUPABASE_REST_URL }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_PUBLIC_API_KEY: ${{ secrets.SUPABASE_PUBLIC_API_KEY }}
+  GH_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}
+jobs:
+  hide-from-results:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install Rust 🦀
+        uses: dtolnay/rust-toolchain@v1
+        with:
+          components: rustfmt, clippy
+          toolchain: stable
+
+      - name: Lint 🧹
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy -- -D warnings
+
+      - name: Test 🔨
+        run: cargo test
+
+      - name: Run 🤖
+        run: cargo run -- exclude ${{ github.event.inputs.date }}
