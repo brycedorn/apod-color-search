@@ -183,5 +183,6 @@
   Disclaimer: this site has no affiliation with <a
     href="https://apod.nasa.gov/apod/astropix.html">APOD</a
   >. All content displayed here is hosted by and links directly to
-  <a href="https://apod.nasa.gov/apod/astropix.html">APOD</a>.
+  <a href="https://apod.nasa.gov/apod/astropix.html">APOD</a>. View
+  <a href="https://github.com/brycedorn/apod-color-search">source on GitHub</a>.
 </footer>
