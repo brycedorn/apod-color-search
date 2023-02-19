@@ -158,7 +158,7 @@
           {result.title} ({formatDate(result.date)})
         </a>
       </h2>
-      <a href={result.url} target="_blank">
+      <a href={result.url} target="_blank" class="image-link">
         {#if i === 0}
           <img
             use:lazyLoad={{ src: result.url, callback: onFirstImageLoaded }}

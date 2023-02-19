@@ -88,7 +88,7 @@ img {
   max-width: 80%;
 }
 
-img:hover {
+.image-link:hover {
   border-bottom: none;
 }
 
