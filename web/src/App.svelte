@@ -96,7 +96,7 @@
     <a href="/apod-color-search">APOD Color Search</a>
   </h2>
   <h2 id="title-sm">
-    <a href="/">🪐</a>
+    <a href="/apod-color-search">🪐</a>
   </h2>
 
   <div id="right">
