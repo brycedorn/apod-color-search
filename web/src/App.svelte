@@ -93,7 +93,7 @@
 
 <div id="top-bar" style="--color: {matchedColor}">
   <h2 id="title">
-    <a href="/">APOD Color Search</a>
+    <a href="/apod-color-search">APOD Color Search</a>
   </h2>
   <h2 id="title-sm">
     <a href="/">🪐</a>
