@@ -52,7 +52,8 @@ h2 a {
 }
 
 #color-wheel-button img {
-  max-width: 37px;
+  width: 80px;
+  max-width: 100%;
 }
 
 #close-indicator {
@@ -75,17 +76,17 @@ span {
 }
 
 #results {
-  margin-top: calc(var(--top-bar-height) + 40px);
+  margin-top: calc(var(--top-bar-height) + 60px);
 }
 
 #results h2 {
-  margin-top: 40px;
   margin: 2em 1em 1em 1em;
   line-height: 1.2em;
 }
 
 img {
-  max-width: 80%;
+  border-radius: 10px;
+  max-width: 90%;
 }
 
 .image-link:hover {
@@ -133,11 +134,11 @@ footer a:hover {
 
 #help {
   background: var(--color-dark);
-  padding: 1em 0.6em;
+  padding: 1em 2em;
   border-radius: 10px;
   max-width: 300px;
   margin: 0 auto;
-  line-height: 1.6em;
+  line-height: 1.8em;
 }
 
 #color-wheel-button {
@@ -151,6 +152,7 @@ footer a:hover {
   background: none;
   border: var(--color) solid 2px;
   border-radius: 50%;
+  padding: 0;
 }
 
 #title, #title-sm {

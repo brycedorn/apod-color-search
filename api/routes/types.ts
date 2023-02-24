@@ -1,3 +1,7 @@
+declare global {
+  const Deno: any;
+};
+
 export type ColorType = {
   id: number;
   created_at: string;

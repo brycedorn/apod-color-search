@@ -6,8 +6,9 @@
 
   import colorWheel from "./assets/color-wheel.svg";
 
-  // const API_URL = "http://localhost:8000";
-  const API_URL = "https://acs-api.deno.dev";
+  const API_URL = "http://localhost:8000";
+  // const API_URL = "https://acs-api.deno.dev";
+  const APOD_URL = "https://apod.nasa.gov/apod/astropix.html";
 
   const queryParams = new URLSearchParams(window.location.search);
   const defaultColor = queryParams.get("c")?.match(/[a-f0-9]{6}/gi);
@@ -173,16 +174,16 @@
 {/if}
 
 {#if inputColor === ""}
-  <h3 id="help">
-    Use the color picker at the top right of the page to search for pictures
-    that match that color!
-  </h3>
+  <div id="help">
+    <h3>Search through nearly 20 years of <a href={APOD_URL}>Astronomy Picture of the Day</a> (APOD) images for ones that match a given color!</h3>
+    <h3>Use the color picker at the top right of the page to search.</h3>
+  </div>
 {/if}
 
 <footer class={results.length === 0 && "bottom"}>
   Disclaimer: this site has no affiliation with <a
-    href="https://apod.nasa.gov/apod/astropix.html">APOD</a
+    href={APOD_URL}>APOD</a
   >. All content displayed here is hosted by and links directly to
-  <a href="https://apod.nasa.gov/apod/astropix.html">APOD</a>. View
+  <a href={APOD_URL}>APOD</a>. View
   <a href="https://github.com/brycedorn/apod-color-search">source on GitHub</a>.
 </footer>

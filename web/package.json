@@ -1,12 +1,10 @@
 {
   "name": "apod-color-search",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",

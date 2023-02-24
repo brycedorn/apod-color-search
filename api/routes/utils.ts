@@ -1,6 +1,7 @@
 import { CacheResult, ClusterType, ColorType, SearchResult } from "./types.ts";
 
-const DISABLE_CACHE = Deno.env.get("DISABLE_CACHE");
+const DISABLE_CACHE_GET = Deno.env.get("DISABLE_CACHE_GET");
+const DISABLE_CACHE_SET = Deno.env.get("DISABLE_CACHE_SET");
 const CACHE_URL = Deno.env.get("CACHE_URL");
 
 export function SuccessResponse(data: SearchResult) {
@@ -53,7 +54,7 @@ export function minimizeDistance(
 }
 
 export async function queryCache(hex: string): Promise<CacheResult> {
-  if (DISABLE_CACHE) {
+  if (DISABLE_CACHE_GET) {
     return { isCached: false, result: [] };
   }
 
@@ -72,7 +73,7 @@ export async function updateCache(
   hex: string,
   value: string,
 ): Promise<CacheResult> {
-  if (DISABLE_CACHE) {
+  if (DISABLE_CACHE_SET) {
     return { isCached: false, result: [] };
   }
 
