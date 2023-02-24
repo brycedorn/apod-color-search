@@ -6,8 +6,8 @@
 
   import colorWheel from "./assets/color-wheel.svg";
 
-  const API_URL = "http://localhost:8000";
-  // const API_URL = "https://acs-api.deno.dev";
+  // const API_URL = "http://localhost:8000";
+  const API_URL = "https://acs-api.deno.dev";
   const APOD_URL = "https://apod.nasa.gov/apod/astropix.html";
 
   const queryParams = new URLSearchParams(window.location.search);
