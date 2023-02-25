@@ -8,11 +8,7 @@ A [Svelte](https://svelte.dev/) app to provide search interface. Uses [vanilla-c
 
 ## api
 
-[Deno](https://deno.land/)-based API that retrieves APOD information from database for images that match the given hex value.
-
-## cache
-
-Node server acting as reverse cache proxy to maintain persistent [Redis](https://redis.com/) connection. Aside from connection limits, [benchmarks](https://github.com/brycedorn/deno-node-redis-postgres-benchmarks) seem to indicate this is more performant than connecting directly to Redis via Deno for each request.
+[Deno](https://deno.land/)-based API that retrieves APOD information from database for images that match the given hex value. Uses Redis to store & retrieve query results.
 
 ## src
 
