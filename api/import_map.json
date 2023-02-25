@@ -8,6 +8,7 @@
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
     "dotenv": "https://deno.land/x/dotenv@v3.2.0/load.ts",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1"
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
+    "redis": "https://deno.land/x/redis@v0.26.0/mod.ts"
   }
 }
