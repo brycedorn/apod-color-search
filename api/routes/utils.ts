@@ -51,10 +51,14 @@ export async function queryCache(hex: string): Promise<CacheResult> {
     return { isCached: false, result: [] };
   }
 
-  const result = await redis.get(hex);
+  let result = await redis.get(hex);
+
+  if (result) {
+    result = JSON.parse(result);
+  }
 
   // @ts-expect-error: Day type
-  return { isCached: !!result, result: JSON.parse(result) };
+  return { isCached: !!result, result };
 }
 
 export async function updateCache(
