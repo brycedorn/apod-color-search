@@ -1,6 +1,6 @@
 # apod color search 🪐
 
-Search for [APOD](https://apod.nasa.gov/apod/astropix.html) photos by color! Consists of four functional parts:
+Search for [APOD](https://apod.nasa.gov/apod/astropix.html) photos by color! Consists of three parts:
 
 ## web
 
